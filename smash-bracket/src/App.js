@@ -23,15 +23,52 @@ const authClient = new WebAuth0AuthClient({
 });
 
 class Header extends Component {
-  state = { text: "" };
+  // state = { text: "" };
   render() {
-    const { createTodo } = this.props;
     return (
-      <header className="header">
-        <h1>todos</h1>
-
-      </header>
-    );
+      <div class="fullpage">  
+          <div id="top">
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  Bracket Here
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
+              </header>
+              
+            </div>
+          </div>
+          
+          <div id="bottom">
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  Current Match Info Here
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
+              </header>
+              
+            </div>
+            bottom</div>
+      </div>
+  
+      );
   }
 }
 
