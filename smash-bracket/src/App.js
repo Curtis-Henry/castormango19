@@ -37,6 +37,30 @@ const withPlayers = graphql(GET_PLAYER_QUERY, {
 },
 });
 
+const CREATE_PLAYER_MUTATION = gql`
+  mutation PlayerCreate($data: PlayerCreateInput!){
+	playerCreate(data: $data){
+    username
+    fname
+    lname
+    wins
+    lost
+    
+  }
+}
+`;
+
+const withCreatePlayer = graphql(CREATE_PLAYER_MUTATION,{
+  props:({mutate}) => ({
+    createPlayer: ({username,fname,lname,wins,lost}) => {
+      mutate({
+        variables:{data: {username,fname,lname,wins,lost}},
+        refetchQueries:[{query:GET_PLAYER_QUERY}]
+      });
+    }
+  })
+})
+
 
 
 class Header extends Component {
@@ -49,8 +73,10 @@ class Header extends Component {
   render() {
     console.log(this.props)
     return (
+      
       <div class="fullpage">
-        <div id="top">
+      {/* {this.renderPlayers()} */}
+        <div id="left">
           <div className="App">
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
