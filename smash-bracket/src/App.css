@@ -1,15 +1,17 @@
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  /* animation: App-logo-spin infinite 30s linear; */
   height: 40vmin;
 }
 
 .App-header {
-  /* background-color: #282c34; */
-  min-height: 100vh;
+  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,58 +33,31 @@
   }
 }
 
-
+/* split into three panels */
 #left {
   width: 65%;
   position: fixed;
   left: 0;
 	right: 0;
-  overflow-x: hidden;
-  background-color:red
 }
-#top {
+#rightTop {
   margin-right: auto;
   
   height: 50%;
-  text-indent: 35%;
   width: 35%;
   
   position: fixed;
   top: 0;
 	right: 0;
   overflow-x: hidden;
-  background-color: green;
 }
-#bot {
+#rightBot {
   margin-right: auto;
   
   height: 50%;
-  text-indent: 35%;
   width: 35%;
   
   position: fixed;
   bottom: 0;
 	right: 0;
-  overflow-x: hidden;
-  background-color: blue;
 }
-
-/* #top {
-  top: 0;
-  background-color: blue;
-} */
-
-
-
-/* .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.centered img {
-  width: 150px;
-  border-radius: 50%;
-} */
