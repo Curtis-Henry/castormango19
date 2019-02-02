@@ -111,6 +111,7 @@ class Header extends Component {
         {/* {this.renderPlayers()} */}
 
 
+
         <div id="left">
           <div className="App">
           
@@ -153,7 +154,7 @@ class Header extends Component {
           <div className="App">
             <header className="App-header">
               <p>
-              here                
+              
               </p>            
             </header>
           </div>
@@ -203,4 +204,4 @@ const authClient = new ApiTokenAuthClient({
 
 
 
-export default App;
+export default App; 
