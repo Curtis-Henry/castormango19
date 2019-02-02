@@ -12,6 +12,9 @@ import { graphql } from "react-apollo";
 import { EightBaseAppProvider } from '@8base/app-provider';
 import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
 
+//custom templates
+import { NameForm } from '../src/objects'
+
 const GET_PLAYER_QUERY = gql`
 query getPlayers{
   playersList{
@@ -50,12 +53,19 @@ const CREATE_PLAYER_MUTATION = gql`
 }
 `;
 
-const withCreatePlayer = graphql(CREATE_PLAYER_MUTATION,{
-  props:({mutate}) => ({
-    createPlayer: ({username,fname,lname,wins,lost}) => {
+const withCreatePlayer = graphql(CREATE_PLAYER_MUTATION, {
+  options: {
+    context: {
+      headers: {
+        "Authorization": "bearer 2e916e3b-acba-4aba-8151-38dc17c23bbe"
+      }
+    }
+  },
+  props: ({ mutate }) => ({
+    createPlayer: ({ username, fname, lname, wins, lost }) => {
       mutate({
-        variables:{data: {username,fname,lname,wins,lost}},
-        refetchQueries:[{query:GET_PLAYER_QUERY}]
+        variables: { data: { username, fname, lname, wins, lost } },
+        refetchQueries: [{ query: GET_PLAYER_QUERY }]
       });
     }
   })
@@ -69,13 +79,17 @@ class Header extends Component {
       return <p>{player.username}</p>
     })
   }
-  // state = { text: "" };
+
+  state = { username: "" };
   render() {
-    console.log(this.props)
+    const { createPlayer } = this.props;
+
     return (
-      
+
       <div class="fullpage">
-      {/* {this.renderPlayers()} */}
+        {/* {this.renderPlayers()} */}
+
+
         <div id="left">
           <div className="App">
             <header className="App-header">
@@ -93,7 +107,27 @@ class Header extends Component {
                 players => pl
 
                   Learn React
+
                 </a>
+              {/* 
+                <NameForm>
+
+                </NameForm> */}
+              <input
+                className="new-todo"
+                onChange={({ target }) =>
+                  this.setState(({ text }) => ({ text: target.value }))
+                }
+                onKeyPress={({ key }) => {
+                  if (key === "Enter") {
+                    createPlayer({ username: this.state.text ,fname:"xd",lname:"hi",wins:"0",lost:"0"});
+                    this.setState({ text: "" });
+                  }
+                }}
+                value={this.state.text}
+                placeholder="What needs to be done?"
+              />
+
             </header>
 
           </div>
@@ -137,7 +171,8 @@ class Header extends Component {
 
 Header = compose(
   withRouter,
-  withPlayers
+  withPlayers,
+  withCreatePlayer
 
 )(Header);
 
