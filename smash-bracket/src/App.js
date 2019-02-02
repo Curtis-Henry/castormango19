@@ -31,10 +31,10 @@ const withPlayers = graphql(GET_PLAYER_QUERY, {
         }
       },
   props: ({ data: { playersList: ({ items } = {}) } }) => {
-    return {
-      players: items || []
-    };
-  },
+  return {
+    players: items || []
+  };
+},
 });
 
 
@@ -69,10 +69,10 @@ class Header extends Component {
 
                   Learn React
                 </a>
-              </header>
-              
-            </div>
+            </header>
+
           </div>
+<<<<<<< HEAD
           
           <div id="left">
           {this.renderPlayers()}
@@ -82,27 +82,28 @@ class Header extends Component {
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
                   Current Match Info Here
-                </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn React
-                </a>
-              </header>
-              
-            </div>
-            bottom</div>
+=======
+        </div>
 
-            <div id="bot">
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Current Match Info Here
+        <div id="rightTop">
+          <div className="App">
+            <header className="App-header">
+              <p>
+              Player 1
+>>>>>>> 451f08d4dc5a8ddae9acc35b72c40cc832487a1e
                 </p>
+            </header>
+
+          </div>
+        </div>
+
+        <div id="rightBot">
+          <div className="App">
+            <header className="App-header">
+              <p>
+                Player 2
+                </p>
+<<<<<<< HEAD
                 <a
                   className="App-link"
                   href="https://reactjs.org"
@@ -116,9 +117,15 @@ class Header extends Component {
             </div>
             bottom</div>
             {/* {this.renderPlayers()} */}
+=======
+            </header>
+
+          </div>
+        </div>
+>>>>>>> 451f08d4dc5a8ddae9acc35b72c40cc832487a1e
       </div>
-  
-      );
+
+    );
   }
 }
 
