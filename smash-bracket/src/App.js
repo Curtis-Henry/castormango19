@@ -120,7 +120,7 @@ class Header extends Component {
                 }
                 onKeyPress={({ key }) => {
                   if (key === "Enter") {
-                    createPlayer({ username: this.state.text ,fname:"xd",lname:"hi",wins:"0",lost:"0"});
+                    createPlayer({ username: this.state.text, fname: "xd", lname: "hi", wins: "0", lost: "0" });
                     this.setState({ text: "" });
                   }
                 }}
@@ -150,19 +150,22 @@ class Header extends Component {
               <p>
                 Player 2
                 </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-                </a>
             </header>
 
           </div>
         </div>
         {/* {this.renderPlayers()} */}
+
+        <div id="rightMid">
+          <div className="App">
+            <header className="App-header">
+              <p>
+              -- VS -- 
+              </p>
+            </header>
+          </div>
+        </div>
+
       </div>
 
     );

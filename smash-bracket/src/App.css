@@ -37,27 +37,32 @@ body {
 #left {
   width: 65%;
   position: fixed;
+  
   left: 0;
-	/* right: 0; */
 }
 #rightTop {
-  margin-right: auto;
   
   height: 50%;
   width: 35%;
   
   position: fixed;
-  top: 0;
+  top: 25%;
 	right: 0;
-  overflow-x: hidden;
 }
 #rightBot {
-  margin-right: auto;
   
   height: 50%;
   width: 35%;
   
   position: fixed;
-  bottom: 0;
+  top: 75%;
 	right: 0;
+}
+#rightMid {  
+  height: 10%;
+  width: 35%;
+  
+  position: fixed;
+  top: 50%;
+  right: 0;
 }
