@@ -11,7 +11,7 @@ import { EightBaseAppProvider } from '@8base/app-provider';
 import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
 
 //authenticator requirements
-const ENDPOINT_URL = 'YOUR_8BASE_ENDPOINT_URL'
+const ENDPOINT_URL = 'https://api.8base.com/cjrmz7id2003z01qpx8xvw75v'
 const AUTH_CLIENT_ID = 'qGHZVu5CxY5klivm28OPLjopvsYp0baD';
 const AUTH_DOMAIN = 'auth.8base.com';
 
