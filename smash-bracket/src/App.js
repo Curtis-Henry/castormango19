@@ -72,17 +72,6 @@ class Header extends Component {
             </header>
 
           </div>
-<<<<<<< HEAD
-          
-          <div id="left">
-          {this.renderPlayers()}
-
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Current Match Info Here
-=======
         </div>
 
         <div id="rightTop">
@@ -90,7 +79,6 @@ class Header extends Component {
             <header className="App-header">
               <p>
               Player 1
->>>>>>> 451f08d4dc5a8ddae9acc35b72c40cc832487a1e
                 </p>
             </header>
 
@@ -103,7 +91,6 @@ class Header extends Component {
               <p>
                 Player 2
                 </p>
-<<<<<<< HEAD
                 <a
                   className="App-link"
                   href="https://reactjs.org"
@@ -117,12 +104,6 @@ class Header extends Component {
             </div>
             bottom</div>
             {/* {this.renderPlayers()} */}
-=======
-            </header>
-
-          </div>
-        </div>
->>>>>>> 451f08d4dc5a8ddae9acc35b72c40cc832487a1e
       </div>
 
     );
