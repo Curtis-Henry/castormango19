@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,24 +31,48 @@
   }
 }
 
-#top,
-#bottom {
-  height: 50%;
+
+#left {
+  width: 65%;
   position: fixed;
   left: 0;
 	right: 0;
   overflow-x: hidden;
+  background-color:red
 }
-
 #top {
+  margin-right: auto;
+  
+  height: 50%;
+  text-indent: 35%;
+  width: 35%;
+  
+  position: fixed;
   top: 0;
-  background-color: #282c34;
+	right: 0;
+  overflow-x: hidden;
+  background-color: green;
+}
+#bot {
+  margin-right: auto;
+  
+  height: 50%;
+  text-indent: 35%;
+  width: 35%;
+  
+  position: fixed;
+  bottom: 0;
+	right: 0;
+  overflow-x: hidden;
+  background-color: blue;
 }
 
-#bottom {
-  bottom: 0;
-  background-color: #282c34;
-}
+/* #top {
+  top: 0;
+  background-color: blue;
+} */
+
+
 
 /* .centered {
   position: absolute;
