@@ -47,7 +47,27 @@ class Header extends Component {
             </div>
           </div>
           
-          <div id="bottom">
+          <div id="left">
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  Current Match Info Here
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
+              </header>
+              
+            </div>
+            bottom</div>
+
+            <div id="bot">
             <div className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
