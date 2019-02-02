@@ -10,10 +10,34 @@ import { HashRouter as Router, withRouter, Link } from "react-router-dom";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import { EightBaseAppProvider } from '@8base/app-provider';
-import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
+import { ApiTokenAuthClient } from '@8base/api-token-auth-client';
 
 //custom templates
 import { NameForm } from '../src/objects'
+import { from } from 'zen-observable';
+
+const GET_PLAYER_BRACKETS_QUERY = gql`
+  query getPlayerBrackets($username: String!){
+    playersList(filter: {username: {equals: $username}}) {
+      items{
+        brackets{
+          items{
+            round
+            match
+        }
+      }
+    }
+  }
+}
+`;
+
+const withPlayerBrackets = graphql(GET_PLAYER_BRACKETS_QUERY, {
+  props: ({ data: { playersList: ({ items } = {}) } }) => {
+  return {
+    playersWithBrackets: items || []
+  };
+},
+});
 
 const GET_PLAYER_QUERY = gql`
 query getPlayers{
@@ -26,13 +50,6 @@ query getPlayers{
 `;
 
 const withPlayers = graphql(GET_PLAYER_QUERY, {
-  options: {
-    context: {
-      headers: {
-        "Authorization": "bearer 2e916e3b-acba-4aba-8151-38dc17c23bbe"
-      }
-    }
-  },
   props: ({ data: { playersList: ({ items } = {}) } }) => {
   return {
     players: items || []
@@ -82,7 +99,7 @@ class Header extends Component {
 
   state = { username: "" };
   render() {
-    const { createPlayer } = this.props;
+    const { createPlayer, playersWithBrackets } = this.props;
 
     return (
 
@@ -160,7 +177,7 @@ class Header extends Component {
           <div className="App">
             <header className="App-header">
               <p>
-              -- VS -- 
+                -- VS --
               </p>
             </header>
           </div>
@@ -175,6 +192,7 @@ class Header extends Component {
 Header = compose(
   withRouter,
   withPlayers,
+  withPlayerBrackets,
   withCreatePlayer
 
 )(Header);
@@ -203,11 +221,10 @@ const ENDPOINT_URL = 'https://api.8base.com/cjrmz7id2003z01qpx8xvw75v'
 const AUTH_CLIENT_ID = 'qGHZVu5CxY5klivm28OPLjopvsYp0baD';
 const AUTH_DOMAIN = 'auth.8base.com';
 
-const authClient = new WebAuth0AuthClient({
-  domain: AUTH_DOMAIN,
-  clientId: AUTH_CLIENT_ID,
-  redirectUri: `${window.location.origin}/auth/callback`,
-  logoutRedirectUri: `${window.location.origin}/auth`,
+const authClient = new ApiTokenAuthClient({
+  apiToken: '2e916e3b-acba-4aba-8151-38dc17c23bbe',
 });
+
+
 
 export default App;
