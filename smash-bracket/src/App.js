@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { compose } from 'react-apollo';
-
 import { HashRouter as Router, withRouter, Link } from "react-router-dom";
 
 //appollo,8base dependencies
@@ -24,24 +22,6 @@ const authClient = new WebAuth0AuthClient({
   logoutRedirectUri: `${window.location.origin}/auth`,
 });
 
-const GET_PLAYER_QUERY = gql`
-query getPlayers{
-  playersList{
-    items{
-      username
-    }
-  }
-}
-`;
-
-const withPlayers = graphql(GET_PLAYER_QUERY, {
-  props: ({ data: { playersList: ({ items } = {}) } }) => {
-    return {
-      players: items || []
-    };
-  },
-});
-  
 class Header extends Component {
   // state = { text: "" };
   render() {
