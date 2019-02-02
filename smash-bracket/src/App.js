@@ -152,9 +152,8 @@ class Header extends Component {
   
   randomizePLayers() {
     ///randomlogic
-this.props.players
+// this.props.players
 
-  
   }
   
   render() {
@@ -172,7 +171,7 @@ this.props.players
             <header className="App-header">
             <img src={bracket} className="App-logo" alt="braket" />
               <NameForm createPlayer={createPlayer} />
-              <button onClick={() => this.randomizePLayers()}>random</button>
+              {/* <button onClick={() => this.randomizePLayers()}>random</button> */}
             </header>
 
           </div>
