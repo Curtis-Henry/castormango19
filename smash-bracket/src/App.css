@@ -43,7 +43,7 @@ body {
 }
 
 /* split into three panels */
-#left {
+#bracketSpace {
   height: 100%;
   width: 70%;
   position: fixed;
@@ -51,14 +51,14 @@ body {
   left: 0;
   background: #282c28;
 }
-#rightTop {
+#playerTop {
   width: 30%;
   
   position: fixed;
   top: 0;
 	right: 0;
 }
-#rightBot {
+#playerBot {
   width: 30%;
   
   position: fixed;
@@ -74,7 +74,7 @@ padding-top: 1%;
 margin-top: 1%;
 }
 
-#rightMid {  
+#vsField {  
   width: 30%;
   
   position: fixed;

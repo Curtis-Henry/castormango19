@@ -111,8 +111,7 @@ class Header extends Component {
         {/* {this.renderPlayers()} */}
 
 
-
-        <div id="left">
+        <div id="bracketSpace">
           <div className="App">
           
             <header className="App-header">
@@ -123,7 +122,7 @@ class Header extends Component {
           </div>
         </div>
 
-        <div id="rightTop">
+        <div id="playerTop">
           <div className="App">
             <header className="App-header">
             <img src={chromHead} className="App-logo" alt="chromHead" />
@@ -132,7 +131,7 @@ class Header extends Component {
           </div>
         </div>
 
-        <div id="rightBot">
+        <div id="playerBot">
           <div className="App">
             <header className="App-header">
             <img src={foxHead} className="App-logo" alt="foxHead" />
@@ -142,7 +141,7 @@ class Header extends Component {
         </div>
         {/* {this.renderPlayers()} */}
 
-        <div id="rightMid">
+        <div id="vsField">
           <div className="App">
             <header className="App-header">
             <img src={vs} className="vsresize" alt="vs"/>
@@ -152,10 +151,7 @@ class Header extends Component {
 
         <div id="centerline">
           <div className="App">
-            <header className="App-header">
-              <p>
-              
-              </p>            
+            <header className="App-header">         
             </header>
           </div>
         </div>
@@ -204,4 +200,4 @@ const authClient = new ApiTokenAuthClient({
 
 
 
-export default App; 
+export default App;
