@@ -22,73 +22,72 @@ const authClient = new WebAuth0AuthClient({
   logoutRedirectUri: `${window.location.origin}/auth`,
 });
 
+const GET_PLAYER_QUERY = gql`
+query getPlayers{
+  playersList{
+    items{
+      username
+    }
+  }
+}
+`;
+
+const withPlayers = graphql(GET_PLAYER_QUERY, {
+  props: ({ data: { playersList: ({ items } = {}) } }) => {
+  return {
+    players: items || []
+  };
+},
+});
+
 class Header extends Component {
-  // state = { text: "" };
   render() {
     return (
-      <div class="fullpage">  
-          <div id="top">
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Bracket Here
+      <div class="fullpage">
+        <div id="left">
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <p>
+                Current Match Info Here
                 </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn React
+              <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn React
                 </a>
-              </header>
-              
-            </div>
-          </div>
-          
-          <div id="left">
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Current Match Info Here
-                </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn React
-                </a>
-              </header>
-              
-            </div>
-            bottom</div>
+            </header>
 
-            <div id="bot">
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Current Match Info Here
+          </div>
+        </div>
+
+        <div id="rightTop">
+          <div className="App">
+            <header className="App-header">
+              <p>
+              Player 1
                 </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn React
-                </a>
-              </header>
-              
-            </div>
-            bottom</div>
+            </header>
+
+          </div>
+        </div>
+
+        <div id="rightBot">
+          <div className="App">
+            <header className="App-header">
+              <p>
+                Player 2
+                </p>
+            </header>
+
+          </div>
+        </div>
       </div>
-  
-      );
+
+    );
   }
 }
 
