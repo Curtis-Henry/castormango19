@@ -113,9 +113,9 @@ class Header extends Component {
 
         <div id="bracketSpace">
           <div className="App">
-          
+
             <header className="App-header">
-            <img src={bracket} className="App-logo" alt="braket" />
+              <img src={bracket} className="App-logo" alt="braket" />
               <NameForm createPlayer={createPlayer} />
             </header>
 
@@ -125,18 +125,37 @@ class Header extends Component {
         <div id="playerTop">
           <div className="App">
             <header className="App-header">
-            <img src={chromHead} className="App-logo" alt="chromHead" />
+              <img src={chromHead} className="App-logo" alt="chromHead" />
             </header>
 
+          </div>
+        </div>
+
+        <div id="playerTopLabel">
+          <div className="App">
+            <header className="App-header">
+              <p>
+                1234567890
+              </p>
+            </header>
           </div>
         </div>
 
         <div id="playerBot">
           <div className="App">
             <header className="App-header">
-            <img src={foxHead} className="App-logo" alt="foxHead" />
+              <img src={foxHead} className="App-logo" alt="foxHead" />
             </header>
+          </div>
+        </div>
 
+        <div id="playerBotLabel">
+          <div className="App">
+            <header className="App-header">
+              <p>
+              1234567890
+              </p>
+            </header>
           </div>
         </div>
         {/* {this.renderPlayers()} */}
@@ -144,14 +163,14 @@ class Header extends Component {
         <div id="vsField">
           <div className="App">
             <header className="App-header">
-            <img src={vs} className="vsresize" alt="vs"/>
+              <img src={vs} className="vsresize" alt="vs" />
             </header>
           </div>
         </div>
 
         <div id="centerline">
           <div className="App">
-            <header className="App-header">         
+            <header className="App-header">
             </header>
           </div>
         </div>

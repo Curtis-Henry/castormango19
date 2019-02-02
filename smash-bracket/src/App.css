@@ -51,6 +51,7 @@ body {
   left: 0;
   background: #282c28;
 }
+
 #playerTop {
   width: 30%;
   
@@ -58,12 +59,42 @@ body {
   top: 0;
 	right: 0;
 }
+#playerTopLabel {
+  height: 10%;
+  width: 13.5%;
+  padding-left: 5px;
+  padding-right: 9px;
+  font-size: 100%;
+  display: inline;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: black;
+  opacity: 0.8;
+}
+
 #playerBot {
   width: 30%;
   
   position: fixed;
   bottom: 0;
 	right: 0;
+}
+#playerBotLabel {
+  height: 10%;
+  width: 13.5%;
+  padding-left: 5px;
+  padding-right: 9px;
+  font-size: 10px;
+  display: inline;
+  clear: both;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: black;
+  opacity: 0.8;
 }
 
 #inputFields p
