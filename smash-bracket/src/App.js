@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+
 import { compose } from 'react-apollo';
 
 import { HashRouter as Router, withRouter, Link } from "react-router-dom";
@@ -80,7 +82,7 @@ class Header extends Component {
     })
   }
 
-  state = { username: "" };
+  state = { username: "", fname: "", lname: "", wins: "", lost: "" };
   render() {
     const { createPlayer } = this.props;
 
@@ -109,24 +111,9 @@ class Header extends Component {
                   Learn React
 
                 </a>
-              {/* 
-                <NameForm>
 
-                </NameForm> */}
-              <input
-                className="new-todo"
-                onChange={({ target }) =>
-                  this.setState(({ text }) => ({ text: target.value }))
-                }
-                onKeyPress={({ key }) => {
-                  if (key === "Enter") {
-                    createPlayer({ username: this.state.text ,fname:"xd",lname:"hi",wins:"0",lost:"0"});
-                    this.setState({ text: "" });
-                  }
-                }}
-                value={this.state.text}
-                placeholder="What needs to be done?"
-              />
+              <NameForm createPlayer={createPlayer} />
+
 
             </header>
 
@@ -163,7 +150,7 @@ class Header extends Component {
           </div>
         </div>
         {/* {this.renderPlayers()} */}
-      </div>
+      </div >
 
     );
   }
