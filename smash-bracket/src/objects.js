@@ -6,20 +6,6 @@ export class NameForm extends React.Component {
 		super(props);
 		this.state = { username: "", fname: "", lname: "", wins: "", lost: "" };
 
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
-
-	handleChange(event) {
-		this.setState({ value: event.target.value });
-
-	}
-
-	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.value);
-		event.preventDefault();
-		console.log(this.state.value)
-
 	}
 
 	render() {
@@ -46,9 +32,7 @@ export class NameForm extends React.Component {
 						this.setState(({ text }) => ({ fname: target.value }))
 					}
 					type="txt" name="fname" placeholder="First Name" />
-					<p>
-
-					</p>
+					<p></p>
 				<input 
 					onChange={({ target }) =>
 						this.setState(({ text }) => ({ lname: target.value }))
