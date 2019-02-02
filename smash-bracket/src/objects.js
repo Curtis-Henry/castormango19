@@ -31,14 +31,14 @@ export class NameForm extends React.Component {
 					this.setState({username: "", fname: "", lname: ""})
 				}}>
 				
-				<label>Username:   
+				{/* <label>Username:    */}
 				<input 
 
 					onChange={({ target }) =>
 						this.setState(({ text }) => ({ username: target.value }))
 					}
 					type="txt" name="username" placeholder="Username" />
-					</label>
+					{/* </label> */}
 					<p></p>
 
 				<input 
@@ -55,7 +55,7 @@ export class NameForm extends React.Component {
 					}
 					type="txt" name="lname" placeholder="LastName" />
 				<p></p>
-				<input type="submit" name="Submit" />
+				<input type="submit" name="Submit" text="Submit"/>
 			</form>
 		);
 	}
