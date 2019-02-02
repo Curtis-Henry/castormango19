@@ -5,8 +5,6 @@ import foxHead from "./foxHead.png";
 import vs from "./vs.png";
 import './App.css';
 
-
-
 import { compose } from 'react-apollo';
 
 import { HashRouter as Router, withRouter, Link } from "react-router-dom";
@@ -161,9 +159,6 @@ class Header extends Component {
         </div>
         {/* {this.renderPlayers()} */}
 
-
-
-
         <div id="rightMid">
           <div className="App">
             <header className="App-header">
@@ -184,7 +179,6 @@ class Header extends Component {
 
       </div>
 
-
     );
   }
 }
@@ -192,7 +186,7 @@ class Header extends Component {
 Header = compose(
   withRouter,
   withPlayers,
-  withPlayerBrackets,
+  // withPlayerBrackets,
   withCreatePlayer
 
 )(Header);
