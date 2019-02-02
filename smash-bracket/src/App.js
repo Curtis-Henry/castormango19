@@ -161,7 +161,7 @@ class Header extends Component {
         </div>
         {/* {this.renderPlayers()} */}
 
-      </div >
+
 
 
         <div id="rightMid">
