@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import chromHead from "./chromHead.png";
 import foxHead from "./foxHead.png";
 import vs from "./vs.png";
+import bracket from "./bracket.png";
 import './App.css';
 
 import { compose } from 'react-apollo';
@@ -112,29 +113,10 @@ class Header extends Component {
 
         <div id="left">
           <div className="App">
+          
             <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Bracket Here
-                </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-
-                players => pl
-
-                  Learn React
-
-                </a>
-
-
+            <img src={bracket} className="App-logo" alt="braket" />
               <NameForm createPlayer={createPlayer} />
-
-
-
             </header>
 
           </div>
