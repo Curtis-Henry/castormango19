@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import chromHead from "./chromHead.png";
+import foxHead from "./foxHead.png";
+import vs from "./vs.png";
 import './App.css';
 
 import { compose } from 'react-apollo';
@@ -136,9 +139,7 @@ class Header extends Component {
         <div id="rightTop">
           <div className="App">
             <header className="App-header">
-              <p>
-                Player 1
-                </p>
+            <img src={chromHead} className="App-logo" alt="chromHead" />
             </header>
 
           </div>
@@ -147,9 +148,7 @@ class Header extends Component {
         <div id="rightBot">
           <div className="App">
             <header className="App-header">
-              <p>
-                Player 2
-                </p>
+            <img src={foxHead} className="App-logo" alt="foxHead" />
             </header>
 
           </div>
@@ -159,9 +158,17 @@ class Header extends Component {
         <div id="rightMid">
           <div className="App">
             <header className="App-header">
+            <img src={vs} className="vsresize" alt="vs"/>
+            </header>
+          </div>
+        </div>
+
+        <div id="centerline">
+          <div className="App">
+            <header className="App-header">
               <p>
-              -- VS -- 
-              </p>
+              here                
+              </p>            
             </header>
           </div>
         </div>

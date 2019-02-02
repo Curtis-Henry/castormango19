@@ -2,11 +2,6 @@ body {
   background-color: #282c34;
 }
 
-#vs{
-  width: 50%;
-  height: auto;
-}
-
 .App {
   text-align: center;
 }
@@ -15,12 +10,8 @@ body {
   height: 40vmin;
 }
 
-/*rezie vs*/
-.vsresize {
-  height: 20vmin;
-}
-
 .App-header {
+  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,37 +37,42 @@ body {
 #left {
   width: 65%;
   position: fixed;
-  
   left: 0;
+	right: 0;
 }
 #rightTop {
+  margin-right: auto;
+  
+  height: 50%;
   width: 35%;
   
   position: fixed;
   top: 0;
 	right: 0;
+  overflow-x: hidden;
 }
 #rightBot {
+  margin-right: auto;
+  
+  height: 50%;
   width: 35%;
   
   position: fixed;
   bottom: 0;
 	right: 0;
 }
-#rightMid {  
-  width: 35%;
+#rightMid {
+  margin-right: auto;
   
-  position: fixed;
-  bottom: 40%;
+  height: 10%;
+  width: 35%;
+
   right: 0;
+
+  position: fixed;
 }
 
-#centerline {  
-  height: 0.1%;
-  width: 100%;
-
-  position: fixed;
-  top: 50%;
-
-  background: red;
+#center {
+  margin: 0 auto;
+  width: 80em;
 }
