@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { compose } from 'react-apollo';
-
 import { HashRouter as Router, withRouter, Link } from "react-router-dom";
 
 //appollo,8base dependencies

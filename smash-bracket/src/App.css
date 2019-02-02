@@ -38,7 +38,7 @@ body {
   width: 65%;
   position: fixed;
   left: 0;
-	right: 0;
+	/* right: 0; */
 }
 #rightTop {
   margin-right: auto;
