@@ -27,9 +27,9 @@ const withPlayers = graphql(GET_PLAYER_QUERY, {
     context: {
       headers: {
         "Authorization": "bearer 2e916e3b-acba-4aba-8151-38dc17c23bbe"
-          }
-        }
-      },
+      }
+    }
+  },
   props: ({ data: { playersList: ({ items } = {}) } }) => {
   return {
     players: items || []
@@ -40,30 +40,29 @@ const withPlayers = graphql(GET_PLAYER_QUERY, {
 
 
 class Header extends Component {
-  renderPlayers()
-  {
+  renderPlayers() {
     return this.props.players.map((player) => {
-      return  <p>{player.username}</p>
+      return <p>{player.username}</p>
     })
   }
   // state = { text: "" };
   render() {
     console.log(this.props)
-    return(
-      <div class="fullpage">  
-          <div id="top">
-            <div className="App">
-              <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Bracket Here
+    return (
+      <div class="fullpage">
+        <div id="top">
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <p>
+                Bracket Here
                 </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
 
                 players => pl
 
@@ -78,7 +77,7 @@ class Header extends Component {
           <div className="App">
             <header className="App-header">
               <p>
-              Player 1
+                Player 1
                 </p>
             </header>
 
@@ -91,19 +90,19 @@ class Header extends Component {
               <p>
                 Player 2
                 </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn React
+              <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn React
                 </a>
-              </header>
-              
-            </div>
-            bottom</div>
-            {/* {this.renderPlayers()} */}
+            </header>
+
+          </div>
+        </div>
+        {/* {this.renderPlayers()} */}
       </div>
 
     );
@@ -113,7 +112,7 @@ class Header extends Component {
 Header = compose(
   withRouter,
   withPlayers
-  
+
 )(Header);
 
 class App extends Component {
