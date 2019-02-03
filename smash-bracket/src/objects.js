@@ -56,6 +56,7 @@ export class NameForm extends React.Component {
 					type="txt" name="lname" placeholder="LastName" />
 				<p></p>
 				<input type="submit" name="Submit" text="Submit"/>
+				
 			</form>
 		);
 	}
