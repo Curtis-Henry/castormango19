@@ -20,28 +20,28 @@ import {OutsideHeader} from '../src/OutterFunctions';
 import { NameForm } from '../src/objects';
 import { from } from 'zen-observable';
 
-const GET_PLAYER_BRACKETS_QUERY = gql`
-  query getPlayerBrackets($username: String!){
-    playersList(filter: {username: {equals: $username}}) {
-      items{
-        brackets{
-          items{
-            round
-            match
-        }
-      }
-    }
-  }
-}
-`;
+// const GET_PLAYER_BRACKETS_QUERY = gql`
+//   query getPlayerBrackets($username: String!){
+//     playersList(filter: {username: {equals: $username}}) {
+//       items{
+//         brackets{
+//           items{
+//             round
+//             match
+//         }
+//       }
+//     }
+//   }
+// }
+// `;
 
-const withPlayerBrackets = graphql(GET_PLAYER_BRACKETS_QUERY, {
-  props: ({ data: { playersList: ({ items } = {}) } }) => {
-  return {
-    playersWithBrackets: items || []
-  };
-},
-});
+// const withPlayerBrackets = graphql(GET_PLAYER_BRACKETS_QUERY, {
+//   props: ({ data: { playersList: ({ items } = {}) } }) => {
+//   return {
+//     playersWithBrackets: items || []
+//   };
+// },
+// });
 
 const GET_PLAYER_QUERY = gql`
 query getPlayers{
@@ -75,13 +75,6 @@ const CREATE_PLAYER_MUTATION = gql`
 `;
 
 const withCreatePlayer = graphql(CREATE_PLAYER_MUTATION, {
-  options: {
-    context: {
-      headers: {
-        "Authorization": "bearer 2e916e3b-acba-4aba-8151-38dc17c23bbe"
-      }
-    }
-  },
   props: ({ mutate }) => ({
     createPlayer: ({ username, fname, lname, wins, lost }) => {
       mutate({
@@ -92,7 +85,59 @@ const withCreatePlayer = graphql(CREATE_PLAYER_MUTATION, {
   })
 })
 
+const GET_PLAYER_COUNT_QUERY = gql`
+query getPlayers{
+  playersList{
+    count
+  }
+}
+`;
 
+const getCount = graphql(GET_PLAYER_COUNT_QUERY,{
+  props:({data:{playersList:({ count } = {} ) } }) =>
+  {
+    return{
+      totCount: count || 0
+    };
+  },
+});
+
+const CREATE_BRACKET_MUTATION = gql`
+mutation CREATE_BRACKET_MUTATION($data: BracketCreateInput!)
+{
+  bracketCreate(data: $data)
+  {
+    round
+    match
+    players {
+      items {
+        username
+      }
+    }
+  
+  }
+}
+`;
+
+const withCreateBracket = graphql(CREATE_BRACKET_MUTATION,{
+  props: ({mutate}) => ({
+    createBracket:({round,match,players:usernames}) => {
+      mutate({
+        variables: { 
+          data: {
+            round, 
+            match,
+            players: {
+              usernames
+            }
+          },
+          refetchQueries: [{ query: CREATE_BRACKET_MUTATION }]
+
+        }
+      });
+    }
+  })
+})
 
 class Header extends Component {
   renderPlayers() {
@@ -103,7 +148,7 @@ class Header extends Component {
 
   state = { username: "", fname: "", lname: "", wins: "", lost: "" };
   render() {
-    const { createPlayer, playersWithBrackets } = this.props;
+    const {createPlayer,players,totCount, createBracket} = this.props;
 
     return (
 
@@ -122,7 +167,8 @@ class Header extends Component {
               {/* <OutsideHeader OutsideHeader={OutsideHeader} /> */}
 
               {/* UNCOMMENT FOR JORDANS SCRIPT */}
-              {/* <NameForm createPlayer={createPlayer}/> */}
+              {/* <NameForm createPlayer={createPlayer}/>*/
+            <NameForm createPlayer={this.props.createPlayer} players={this.props.players} totCount = {this.props.totCount} createBracket={this.props.createBracket}/>}
                {/* CALLS OBJECT.js */}
 
 
@@ -145,7 +191,10 @@ Header = compose(
   withRouter,
   withPlayers,
   // withPlayerBrackets,
-  withCreatePlayer
+  withCreatePlayer,
+  withCreateBracket,
+  getCount
+
 
 )(Header);
 
