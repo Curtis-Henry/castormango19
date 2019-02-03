@@ -26,7 +26,6 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -42,6 +41,7 @@ body {
   }
 }
 
+/* Main elements start here */
 /* split into three panels */
 #bracketSpace {
   height: 100%;
@@ -65,6 +65,7 @@ body {
   padding-left: 5px;
   padding-right: 9px;
   font-size: 100%;
+  color: white;
   display: inline;
 
   position: fixed;
@@ -87,6 +88,7 @@ body {
   padding-left: 5px;
   padding-right: 9px;
   font-size: 10px;
+  color: white;
   display: inline;
   clear: both;
 
@@ -113,12 +115,42 @@ margin-top: 1%;
   right: 0;
 }
 
-#centerline {  
-  height: 0.1%;
-  width: 100%;
+.bracketBoxes {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  
+  height: 10%;
+  width: 13.5%;
+  padding-left: 5px;
+  padding-right: 9px;
+  font-size: 10px;
+  display: inline;
+  clear: both;
 
+  font-weight: bold;
+  color: black;
+  background: white;
+  
   position: fixed;
-  top: 50%;
+  left: 0;
+  top: 0;
+}
 
-  background: red;
+#bracketBox1 {  
+  left: 0;
+  top: 0;
+}
+#bracketBox2 {  
+  left: 0;
+  top: 25%;
+}
+#bracketBox3 {  
+  left: 0;
+  top: 50%;
+}
+#bracketBox4 {  
+  left: 0;
+  top: 75%;
 }
