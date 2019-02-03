@@ -116,10 +116,16 @@ class Header extends Component {
 
             <header className="App-header">
               {/* <img src={bracket} className="App-logo" alt="braket" /> */}
-              {/* CALLS OBJECT.js */}
+
+
+              {/* UNCOMMENT FOR MATTS SCRIPT */}
               {/* <OutsideHeader OutsideHeader={OutsideHeader} /> */}
+
+              {/* UNCOMMENT FOR JORDANS SCRIPT */}
               {/* <NameForm createPlayer={createPlayer}/> */}
                {/* CALLS OBJECT.js */}
+
+
             </header>
 
             <header className="App-header">
